@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #050507;
+    color: #f3f4f6;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.font-sport {
+  font-family: 'Teko', 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-heading {
+  font-family: 'Montserrat', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Carbon & Metallic textures */
+.bg-carbon {
+  background-color: #0b0b0e;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0),
+    radial-gradient(rgba(255, 85, 0, 0.05) 1px, transparent 0);
+  background-size: 24px 24px, 48px 48px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* 3D Glassmorphism with metallic edge */
+.glass-panel-3d {
+  background: linear-gradient(145deg, rgba(28, 28, 35, 0.75) 0%, rgba(14, 14, 18, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 12px 32px -4px rgba(0, 0, 0, 0.7),
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.glass-panel-orange {
+  background: linear-gradient(145deg, rgba(32, 24, 20, 0.8) 0%, rgba(16, 12, 10, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 85, 0, 0.25);
+  box-shadow: 
+    0 12px 36px -4px rgba(255, 85, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 140, 50, 0.25);
+}
+
+/* Metallic button sheen effect */
+.btn-metallic {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-metallic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 140, 50, 0.3),
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: left 0.85s ease;
+  pointer-events: none;
+}
+
+.btn-metallic:hover::before,
+.btn-metallic:active::before {
+  left: 150%;
+}
+
+/* Orange glow pulses */
+@keyframes orangePulseSlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 85, 0, 0.35), 0 0 30px rgba(255, 85, 0, 0.15);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 85, 0, 0.55), 0 0 50px rgba(255, 85, 0, 0.25);
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: orangePulseSlow 4s infinite ease-in-out;
+}
+
+/* Subtle particle animation */
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+}
+
+.animate-particle {
+  animation: particleFloat 7s infinite ease-in-out;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Marcos Willian | Personal Trainer",
+  "description": "Biosite oficial de Marcos Willian - Personal Trainer e Preparador Físico. Treino com propósito. Evolução com resultado. Time MW.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
